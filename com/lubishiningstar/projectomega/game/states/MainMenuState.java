@@ -18,7 +18,7 @@ public class MainMenuState extends GameState implements GameLogic
 	{
 		FADING_IN,
 		WAITING,
-		OPTIONS,
+		FADING_OUT_OPTIONS,
 		FADING_OUT_PLAY,
 		FADING_OUT_EXIT,
 		FADING_OUT_CREDITS
@@ -67,7 +67,7 @@ public class MainMenuState extends GameState implements GameLogic
 			@Override
 			public void onClick() {
 				_fade.reset();
-				_subState = SubStates.OPTIONS;
+				_subState = SubStates.FADING_OUT_OPTIONS;
 			}
 		};
 		
@@ -145,6 +145,7 @@ public class MainMenuState extends GameState implements GameLogic
 			break;
 		
 		case FADING_OUT_PLAY:
+		case FADING_OUT_OPTIONS:
 		case FADING_OUT_CREDITS:
 		case FADING_OUT_EXIT:
 			_fade.fadeOut(batch, 2);
