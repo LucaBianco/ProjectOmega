@@ -6,11 +6,10 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.lubishiningstar.projectomega.fx.FadeFX;
 import com.lubishiningstar.projectomega.game.Game;
-import com.lubishiningstar.projectomega.game.GameLogic;
 import com.lubishiningstar.projectomega.game.GameState;
 import com.lubishiningstar.projectomega.game.GameStates;
 
-public class LogoState extends GameState implements GameLogic
+public class LogoState extends GameState
 {
 	enum SubStates
 	{

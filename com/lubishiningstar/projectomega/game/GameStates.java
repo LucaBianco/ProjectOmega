@@ -4,5 +4,8 @@ public enum GameStates
 {
 	NONE,
 	LOGO,
-	MAIN_MENU
+	MAIN_MENU,
+	PLAYING,
+	OPTIONS,
+	CREDITS
 }

@@ -6,13 +6,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.lubishiningstar.projectomega.fx.FadeFX;
 import com.lubishiningstar.projectomega.game.Game;
-import com.lubishiningstar.projectomega.game.GameLogic;
 import com.lubishiningstar.projectomega.game.GameState;
 import com.lubishiningstar.projectomega.game.GameStates;
 import com.lubishiningstar.projectomega.ui.Control;
 import com.lubishiningstar.projectomega.ui.ControlClickCallBack;
 
-public class MainMenuState extends GameState implements GameLogic
+public class MainMenuState extends GameState
 {
 	enum SubStates
 	{
@@ -123,8 +122,29 @@ public class MainMenuState extends GameState implements GameLogic
 			
 			break;
 			
+		case FADING_OUT_OPTIONS:
+			if (_fade.getT() >= 1 || Gdx.input.justTouched())
+			{
+				endState(game, GameStates.OPTIONS, false);
+			}
+			break;
+			
+		case FADING_OUT_CREDITS:
+			if (_fade.getT() >= 1 || Gdx.input.justTouched())
+			{
+				endState(game, GameStates.CREDITS, false);
+			}
+			break;
+		
+		case FADING_OUT_PLAY:
+			if (_fade.getT() >= 1 || Gdx.input.justTouched())
+			{
+				endState(game, GameStates.PLAYING, false);
+			}
+			break;
+			
 		case FADING_OUT_EXIT:
-			if (_fade.getT() >= 2 || Gdx.input.justTouched())
+			if (_fade.getT() >= 1 || Gdx.input.justTouched())
 			{
 				Gdx.app.exit();
 			}
@@ -148,7 +168,7 @@ public class MainMenuState extends GameState implements GameLogic
 		case FADING_OUT_OPTIONS:
 		case FADING_OUT_CREDITS:
 		case FADING_OUT_EXIT:
-			_fade.fadeOut(batch, 2);
+			_fade.fadeOut(batch, 1);
 			break;
 			
 		default:

@@ -56,6 +56,20 @@ public class Game implements GameLogic
 			case MAIN_MENU:
 				_states.add(new MainMenuState());
 				break;
+				
+			case CREDITS:
+				_states.add(new CreditsState());
+				break;
+				
+			case OPTIONS:
+				_states.add(new OptionsState());
+				break;
+				
+			case PLAYING:
+				_states.add(new PlayingState());
+				break;
+			default:
+				break;
 			}
 			_states.get(_states.size()-1).init();
 			return _states.size()-1;
