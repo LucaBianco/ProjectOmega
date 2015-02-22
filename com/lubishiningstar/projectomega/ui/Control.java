@@ -2,6 +2,7 @@ package com.lubishiningstar.projectomega.ui;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -49,5 +50,10 @@ public class Control extends Rectangle {
 	public void setClickCB(ControlClickCallBack cbClick)
 	{
 		_cbClick = cbClick;
+	}
+
+	public Vector2 getPosition() 
+	{
+		return new Vector2(x, y);
 	}
 }
